@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-body">
+    <table class="table table-striped">
+      <tr>
+        <th>Name</th>
+        <th>Birth Year</th>
+        <th>Select!</th>
+      </tr>
+      <tr *ngFor="let item of moviesDB">
+        <td>{{item.title}}</td>
+        <td>{{item.year}}</td>
+        <td>
+          <button type="submit" class="btn btn-secondary" (click)="onMovieSelectUpdate(item)">Update</button>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <div>
+      <div class="form-group">
+        <label for="actorName">Movie Name</label>
+        <input type="text" class="form-control" id="actorName" [(ngModel)]="movieName">
+      </div>
+      <div class="form-group">
+        <label for="actorName">Release Year</label>
+        <input type="number" class="form-control" id="actorName" [(ngModel)]="movieYear">
+      </div>
+      <button type="submit" class="btn btn-secondary" (click)="onUpdateMovie()">Update Movie</button>
+    </div>
+  </div>
+</div>

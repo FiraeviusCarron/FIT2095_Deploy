@@ -1,0 +1,42 @@
+<div class="card">
+  <div class="card-body">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <table class="table table-hover">
+            <thead>
+            <th>Actor Name</th>
+            <th>Actor Date of Birth</th>
+            <th></th>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of actorsDB">
+              <td style="text-align: left">{{item.name}}</td>
+              <td>{{item.dob}}</td>
+              <td>
+                <button type="submit" class="btn btn-secondary" (click)="onActorMoviesFetched(item)">Select
+                  Actor
+                </button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col">
+          <table class="table table-hover">
+            <thead>
+            <th>{{selectedActor}}</th>
+            <th></th>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of selectedActorMovies">
+              <td style="text-align: left">{{item.title}}</td>
+              <td>{{item.year}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
