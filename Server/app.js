@@ -18,7 +18,7 @@ mongoose.connect(url,{useNewUrlParser:true}, err => {
     console.log('Connection to MongoDB successful');
 });
 
-app.use('/', express.static('./dist/Server'));
+app.use('/', express.static('./prod/Server'));
 
 //Actor Endpoints
 app.get('/actors', actors.getAll);
